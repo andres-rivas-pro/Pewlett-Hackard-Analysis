@@ -16,7 +16,7 @@ select ce.emp_no, ce.first_name, ce.last_name, t.title, t.from_date, s.salary in
 
 Output
 number challenge_emp_info with names that have duplicates because of titles.
-![Number of Employees]()
+![Number of Employees](https://github.com/raven-rivas/Pewlett-Hackard-Analysis/blob/master/Pewlett-Hackard-Analysis%20Folder/Employee_name_dup.PNG)
 
 Only the Most Recent Titles
 In this query we remove the duplicates from the dataset above using a partion statement. We used a CTE to facilitate the frequency count of employee titles. We made an assumption that the count should only include current title and not titles previously held by the same employee.
@@ -32,7 +32,7 @@ SELECT *, count(ct.Employee_number) OVER (PARTITION BY ct.title ORDER BY ct.from
 SELECT COUNT(employee_number), title FROM challenge_title_info GROUP BY title;
 
 Output
-![current_title_info]()
+![current_title_info](https://github.com/raven-rivas/Pewlett-Hackard-Analysis/blob/master/Pewlett-Hackard-Analysis%20Folder/Employee_name_wo_dup.PNG)
 
 
 Who’s Ready to be a Mentor?
@@ -45,4 +45,4 @@ select tm.emp_no, tm.first_name, tm.last_name, tm.title, tm.from_date , tm.to_da
 
 ORDER BY tm.last_name
 Output
-![Ready to Mentor]()
+![Ready to Mentor](https://github.com/raven-rivas/Pewlett-Hackard-Analysis/blob/master/Pewlett-Hackard-Analysis%20Folder/Employee_Ready_Mentor.PNG)
